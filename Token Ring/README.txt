@@ -1,5 +1,6 @@
 We start the five peers at five different terminals:
-```java
+
+```sh
 ./run 1
 
 ./run 2
@@ -10,14 +11,17 @@ We start the five peers at five different terminals:
 
 ./run 5
 ```
+
 The run command is equivalent to executing:
-```java
+
+```shell
 gradle run_peer --args="mx", where x is an identifier for the peer
 ```
 
 
 We also start the calculator server:
-```java
+
+```shell
 gradle run_calculator
 ```
 
@@ -25,6 +29,7 @@ gradle run_calculator
 
 We run the injector to inject the token into a peer,
 which starts the execution:
-```java
+
+```shell
 gradle run_injector
 ```
