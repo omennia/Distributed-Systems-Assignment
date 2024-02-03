@@ -1,4 +1,3 @@
-
 In this assignment, I was asked to implement three algorithms for the distributed systems subject.
 In each assignment there are detailed instructions on how to run each program.
 There is also a runner for each one of the built in examples. 
