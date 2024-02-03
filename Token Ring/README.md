@@ -1,6 +1,6 @@
 We start the five peers at five different terminals:
 
-```sh
+```shell
 ./run 1
 
 ./run 2
