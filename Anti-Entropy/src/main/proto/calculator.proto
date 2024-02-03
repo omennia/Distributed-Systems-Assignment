@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.assign.grpc";
+
+
+service TokenService {
+  rpc SendToken (TokenRequest) returns (TokenResponse);
+}
+
+service PushPullService {
+  rpc pushPull (QueueSend) returns (QueueSendResponse);
+}
+
+service StartService {
+  rpc SendStartToken (StartToken) returns (StartToken); // Nao importa o que retornamos
+}
+
+
+message QueueSend {
+  string message = 1;
+}
+
+message QueueSendResponse {
+  string message = 1;
+}
+
+message TokenRequest {
+  string sourceIdentifier = 1;
+  string message = 2;
+  repeated string words = 3;
+}
+
+message TokenResponse {
+  string confirmation = 1;
+  repeated string words = 2; // Merged list of words
+}
+
+message StartToken {
+  bool start = 1;
+}

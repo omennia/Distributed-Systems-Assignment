@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.assign.grpc";
+
+service TokenService {
+  rpc SendToken (LamportMessage) returns (LamportReply);
+}
+
+service AckService {
+  rpc SendAck (LamportMessage) returns (LamportReply);
+}
+
+service StartService {
+  rpc SendStartToken (StartToken) returns (LamportReply); // Nao importa o que retornamos
+}
+
+message LamportMessage {
+  string sourceIdentifier = 1;
+  int32 timestamp = 2;
+  int32 timestampForAcks = 3;
+  string word = 4;
+}
+
+message LamportReply {
+  string confirmation = 1;
+}
+
+message StartToken {
+  bool start = 1;
+}

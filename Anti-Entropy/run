@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Check if an argument is provided
+if [ -z "$1" ]; then
+  echo "Please provide an argument (1-6)."
+  exit 1
+fi
+
+# Run different commands based on the argument
+case $1 in
+  1)
+    clear && gradle run_peer --args="m1 m2"
+    ;;
+  2)
+    clear && gradle run_peer --args="m2 m1 m3 m4"
+    ;;
+  3)
+    clear && gradle run_peer --args="m3 m2"
+    ;;
+  4)
+    clear && gradle run_peer --args="m4 m2 m5 m6"
+    ;;
+  5)
+    clear && gradle run_peer --args="m5 m4"
+    ;;
+  6)
+    clear && gradle run_peer --args="m6 m4"
+    ;;
+  *)
+    echo "Invalid argument. Please provide a number between 1 and 6."
+    ;;
+esac

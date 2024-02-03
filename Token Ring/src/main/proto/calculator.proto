@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ds.assign.grpc";
+
+
+// Para a calculation
+service CalculatorService {
+    rpc Add (CalculationRequest) returns (CalculationResponse);
+    rpc Sub (CalculationRequest) returns (CalculationResponse);
+    rpc Mult (CalculationRequest) returns (CalculationResponse);
+    rpc Div (CalculationRequest) returns (CalculationResponse);
+}
+
+message CalculationRequest {
+    double value1 = 1;
+    double value2 = 2;
+}
+
+message CalculationResponse {
+    double result = 1;
+}
+
+
+// Para o injetor
+service TokenService {
+    rpc SendToken (TokenRequest) returns (TokenResponse);
+}
+
+message TokenRequest {
+    string message = 1;
+}
+
+message TokenResponse {
+    string confirmation = 1;
+}
