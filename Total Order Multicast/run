@@ -4,4 +4,4 @@
 clear
 
 # Run the gradle command with the argument passed to the script
-gradle run_peer --args="m$1" > "out$1"
+gradle run_peer --args="m$1" #> "out$1"
