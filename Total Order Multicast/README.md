@@ -1,4 +1,5 @@
-** It is important that the number of peers matches the one specified in the file config.properties **
+*It is important that the number of peers matches the one specified in the file config.properties*
+
 To run this program, we only need to specify the peer number.
 We can start a peer by running the command:
 ```shell
